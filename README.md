@@ -32,6 +32,18 @@ Configure the file 'application.properties' and run:
 
 	mvn clean install
 
+# API - Execution (by command)
+
+*(Using [Postman](https://www.getpostman.com/) the HTTP 200-OK and HTTP 403-Forbidden will become visible)*
+
+##### Detect if a DNA is mutant:
+
+	curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d 'DNA_TO_TEST' http://localhost:8080/mutant/ # DNA_TO_TEST->{"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
+
+##### Get statistics of DNA validation:
+
+	curl -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:8080/stats
+
 # Testing (To be implemented)
 
 To execute the tests run:
