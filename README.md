@@ -21,15 +21,19 @@ API - isMutant
 
 # Deployment
 Create the database in MySQL:
+
 	mysql> CREATE DATABASE mutantDna;
 
 If troubles with privileges or "access denied" run:
+
 	mysql> GRANT ALL PRIVILEGES ON challenge.* TO 'root'@'localhost';
 
 Configure the file 'application.properties' and run:
+
 	mvn clean install
 
 # Testing (To be implemented)
 
 To execute the tests run:
+
 	mvn clean test
