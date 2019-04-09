@@ -14,6 +14,9 @@ public class MutantService {
 	
 	@Autowired
 	private MutantRepository mutantRepository;
+	public static final String COUNT_MUTANT_DNA = "count_mutant_dna";
+	public static final String COUNT_HUMAN_DNA = "count_human_dna";
+	public static final String RATIO = "ratio";
 	
 	public boolean isMutant(DNASequence dna) {
 		if (!dna.isValid()) {
@@ -30,9 +33,9 @@ public class MutantService {
 		JSONObject stats = new JSONObject();
 		long mutantCount = mutantRepository.countByIsMutant(true);
 		long humanCount = mutantRepository.countByIsMutant(false);
-		stats.put("count_mutant_dna", mutantCount);
-		stats.put("count_human_dna", humanCount);
-		stats.put("ratio", getRatio(mutantCount, humanCount));
+		stats.put(COUNT_MUTANT_DNA, mutantCount);
+		stats.put(COUNT_HUMAN_DNA, humanCount);
+		stats.put(RATIO, getRatio(mutantCount, humanCount));
 		return stats.toString();
 	}
 
