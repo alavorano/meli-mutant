@@ -28,6 +28,9 @@ public class DNASequence {
 	private static final int TIMES_REPEATED = 4;
 	private static final int TOTAL_SEQUENCE_ALLOWED = 2;
 
+	public DNASequence() {
+	}
+
 	public DNASequence(String[] sequence) {
 		this.setDna(sequence);
 	}
