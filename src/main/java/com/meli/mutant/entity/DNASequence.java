@@ -68,13 +68,13 @@ public class DNASequence {
 	}
 	
     public boolean isValid() {
-		return getDna() != null && getDna().length >= TIMES_REPEATED && Arrays.stream(getDna()).allMatch(sequence ->
-			sequence.length() == getDna().length && IntStream.range(0, sequence.length()).allMatch(i -> sequence.matches(String.format("[ATCG]{%d}", getDna().length)))
+		return getDna() != null && getDna().length > 0 && Arrays.stream(getDna()).allMatch(sequence ->
+			sequence.length() == getDna().length && IntStream.range(0, sequence.length()).allMatch(i -> sequence.matches(String.format("[AaTtCcGg]{%d}", getDna().length)))
 		);
 	}
 
 	private void fillMatrix(char[][] matrix, String[] dna) {
-		IntStream.range(0, dna.length).forEach(row -> matrix[row] = dna[row].toCharArray());
+		IntStream.range(0, dna.length).forEach(row -> matrix[row] = dna[row].toUpperCase().toCharArray());
 	}
 
 	private void checkMutancyFrom(char[][] matrix, int row, int column) {
