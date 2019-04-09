@@ -39,7 +39,7 @@ public class MutantService {
 		return stats.toString();
 	}
 
-	private double getRatio(long mutantCount, long humanCount) {
+	public double getRatio(long mutantCount, long humanCount) {
 		double ratio;
 		if (humanCount != 0) {
 			ratio = (double) mutantCount / (double) humanCount;
