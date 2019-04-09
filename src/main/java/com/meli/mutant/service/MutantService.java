@@ -18,6 +18,10 @@ public class MutantService {
 	public static final String COUNT_HUMAN_DNA = "count_human_dna";
 	public static final String RATIO = "ratio";
 	
+	public MutantService(MutantRepository mutantRepository) {
+		this.mutantRepository = mutantRepository;
+	}
+
 	public boolean isMutant(DNASequence dna) {
 		if (!dna.isValid()) {
 			throw new BadRequestException("DNA is not valid.");

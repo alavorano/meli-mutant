@@ -27,6 +27,10 @@ public class DNASequence {
 	private AtomicInteger mutantSequenceCount = new AtomicInteger(0);
 	private static final int TIMES_REPEATED = 4;
 	private static final int TOTAL_SEQUENCE_ALLOWED = 2;
+
+	public DNASequence(String[] sequence) {
+		this.setDna(sequence);
+	}
     
     public void setId(Integer id) {
     	this.id = id;
